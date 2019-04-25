@@ -25,6 +25,8 @@ begin;
 \ir libs/request/schema.sql
 -- functions for sending messages to RabbitMQ entities
 \ir libs/rabbitmq/schema.sql
+-- add this line just below the place where rabbitmq lib is included
+\ir libs/util/schema.sql
 
 -- save app settings
 select settings.set('jwt_secret', :quoted_jwt_secret);
